@@ -148,7 +148,7 @@ class ListService {
     }
 }
 
-// Класс для работы с формой, редактирующей информацию о пользователе
+// Класс для работы с форомой, редактирующей информацию о пользователе
 class UserFormService {
     currentUser;
     form;
@@ -198,8 +198,9 @@ userList.addEventListener("click", function (e) {
     formService.fillForm(listService.selectedData);
 });
 
-saveButton.addEventListener("click", function () {
+document.forms[0].addEventListener("submit", function (e) {
     formService.saveForm();
+    e.preventDefault();
 });
 
 // удаляем и очищаем форму
